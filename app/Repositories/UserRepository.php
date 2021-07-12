@@ -59,21 +59,11 @@ class UserRepository
 
     public function delete($param,$connect)
     {
-        echo "Ban co chac chan muon xoa khong?? \n";
-        echo "(Y Or N) ??";
-        $input = fgetc(fopen('php://stdin', 'r'));
-        if ($input == 'y') {
-            $results = $connect->deleteMany(
-                [
-                    'code' => $param,
-                ]);
-            return $results->getDeletedCount();
-        }
-        if ($input == 'y') {
-            echo "ket thuc \n";
-            die();
-        }
+        $results = $connect->deleteMany(
+            [
+                'code' => $param,
+            ]);
+        return $results->getDeletedCount();
     }
 }
-
 ?>

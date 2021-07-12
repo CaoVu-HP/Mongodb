@@ -72,6 +72,7 @@ class ComposerStaticInit3c7ec08c5a770e74de8e0d2b53a20013
         ),
         'C' => 
         array (
+            'Cn\\' => 3,
             'Carbon\\' => 7,
         ),
         'A' => 
@@ -186,6 +187,10 @@ class ComposerStaticInit3c7ec08c5a770e74de8e0d2b53a20013
         'Doctrine\\Inflector\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Inflector',
+        ),
+        'Cn\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/bootstrap',
         ),
         'Carbon\\' => 
         array (

@@ -64,8 +64,17 @@ class App
                 if ($input == '5') {
                     echo "Nhap code muon xoa:\n";
                     $param=trim(fgets(fopen('php://stdin', 'r')));
-                    $name = $userRepository->delete($param,$connect);
-                    echo " Da Xoa Thanh Cong:$name \n";
+                    echo "Ban co chac chan muon xoa khong?? \n";
+                    echo "(Y Or N) ??";
+                    $input = fgetc(fopen('php://stdin', 'r'));
+                    if ($input == 'y') {
+                        $name = $userRepository->delete($param,$connect);
+                        echo " Da Xoa Thanh Cong:$name \n";
+                    }
+                    if ($input == 'y') {
+                        echo "ket thuc \n";
+                        die();
+                    }
                 }
             }
             if ($put == 'q') {

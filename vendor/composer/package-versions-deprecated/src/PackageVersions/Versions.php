@@ -63,7 +63,7 @@ final class Versions
   'symfony/translation' => 'v5.3.3@380b8c9e944d0e364b25f28e8e555241eb49c01c',
   'symfony/translation-contracts' => 'v2.4.0@95c812666f3e91db75385749fe219c5e494c7f95',
   'voku/portable-ascii' => '1.5.6@80953678b19901e5165c56752d087fc11526017c',
-  '__root__' => '1.0.0+no-version-set@',
+  '__root__' => 'dev-master@11c5827493e5571e226d63a3c08773ea3a9b15b7',
 );
 
     private function __construct()
