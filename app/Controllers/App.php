@@ -1,6 +1,8 @@
 <?php
+
 namespace App\Controllers;
 use App\Repositories\UserRepository;
+
 class App
 {
     public function Call($connect)
@@ -17,27 +19,26 @@ class App
                 echo "Nhap 4 de sua \n";
                 echo "Nhap 5 de xoa \n";
                 $input = fgetc(fopen('php://stdin', 'r'));
-                if ($input == '1')
-                {
+                if ($input == '1') {
                     $userRepository->gets($connect);
                 }
                 if ($input == '2') {
                     echo "Nhap code \n";
-                    $param=trim(fgets(fopen('php://stdin', 'r')));
-                    $userRepository->search($param,$connect);
+                    $param = trim(fgets(fopen('php://stdin', 'r')));
+                    $userRepository->search($param, $connect);
                 }
                 if ($input == '3') {
                     echo "Nhap name\n";
-                    $param['name']=trim(fgets(fopen('php://stdin', 'r')));
+                    $param['name'] = trim(fgets(fopen('php://stdin', 'r')));
                     echo "Nhap code \n";
-                    $param['code']=trim(fgets(fopen('php://stdin', 'r')));
+                    $param['code'] = trim(fgets(fopen('php://stdin', 'r')));
                     echo "Nhap birthday \n";
-                    $param['birthday']=trim(fgets(fopen('php://stdin', 'r')));
+                    $param['birthday'] = trim(fgets(fopen('php://stdin', 'r')));
                     echo "Nhap age \n";
-                    $param['age']=intval(trim(fgets(fopen('php://stdin', 'r'))));
+                    $param['age'] = intval(trim(fgets(fopen('php://stdin', 'r'))));
                     echo "Nhap password \n";
-                    $param['password']=trim(fgets(fopen('php://stdin', 'r')));
-                    $name = $userRepository->insert($param,$connect);
+                    $param['password'] = trim(fgets(fopen('php://stdin', 'r')));
+                    $name = $userRepository->insert($param, $connect);
                     echo " Da them thanh cong:$name \n";
                 }
                 if ($input == '4') {
@@ -54,24 +55,23 @@ class App
                         $param['age'] = intval(trim(fgets(fopen('php://stdin', 'r'))));
                         echo "Nhap password \n";
                         $param['password'] = trim(fgets(fopen('php://stdin', 'r')));
-                    }
-                    else{
+                    } else {
                         die();
                     }
-                    $userRepository->update($param,$connect);
+                    $userRepository->update($param, $connect);
                 }
 
                 if ($input == '5') {
                     echo "Nhap code muon xoa:\n";
-                    $param=trim(fgets(fopen('php://stdin', 'r')));
+                    $param = trim(fgets(fopen('php://stdin', 'r')));
                     echo "Ban co chac chan muon xoa khong?? \n";
                     echo "(Y Or N) ??";
                     $input = fgetc(fopen('php://stdin', 'r'));
                     if ($input == 'y') {
-                        $name = $userRepository->delete($param,$connect);
+                        $name = $userRepository->delete($param, $connect);
                         echo " Da Xoa Thanh Cong:$name \n";
                     }
-                    if ($input == 'y') {
+                    if ($input == 'n') {
                         echo "ket thuc \n";
                         die();
                     }
@@ -84,4 +84,5 @@ class App
         }
     }
 }
+
 ?>
